@@ -29,11 +29,35 @@
           zoom: 8
         });
         
+        var contentString = '<div id="content">'+
+            '<div id="description">'+
+            '</div>'+
+            '<h1 id="firstHeading" class="firstHeading">Pauline Cheong, Faculty</h1>'+
+            '<div id="bodyContent">'+
+            '<p>Talk' +
+            'Fuller Theological Seminary '+
+            'Keynote Lecture: "Data, Discernment & Duty: Illuminating engagement in the Internet of Things"  Techno-Sapiens in a networked era. '+
+            '2019'+
+            '<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">'+
+            'https://en.wikipedia.org/w/index.php?title=Uluru</a> '+
+            '(last visited June 22, 2009).</p>'+
+            '</div>'+
+            '</div>';
+
+        
+         var infowindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+
           var marker = new google.maps.Marker({
-      position: myLatLng,
-      map: map,
-      title: 'Hello World!'
-    });
+          position: myLatLng,
+          map: map,
+          title: 'Hello World!'
+        });
+
+         marker.addListener('click', function() {
+          infowindow.open(map, marker);
+        });
 
       }   
        
