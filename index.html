@@ -23,6 +23,7 @@
     <script>
       var map;
       var myLatLng = {lat: 1.347682, lng: 103.683266};
+      var myLatLng2 = {lat: 46.011452, lng: 8.958066};
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 1.347682, lng: 103.683266},
@@ -48,13 +49,41 @@
           var marker = new google.maps.Marker({
           position: myLatLng,
           map: map,
-          title: 'Hello World!'
+          title: 'First!'
         });
 
          marker.addListener('click', function() {
           infowindow.open(map, marker);
         });
+//////////////
+        var contentString2 = '<div id="content">'+
+            '<div id="description">'+
+            '</div>'+
+            '<h1 id="firstHeading" class="firstHeading">Jolanta Drzeiecka , Alumni</h1>'+
+            '<div id="bodyContent">'+
+            '<p>Senior Assistant Professor, 1999</p>' +
+            '<p>Università della Svizzera italiana (University of Lugano)</p>'+
+            '<p>Lugano, Switzerland'+
+            '<p>URL: <a href="https://search.usi.ch/en/people/2c4b9f091cd8378fd31c8b1f158e22d3/drzewiecka-jolanta">https://search.usi.ch/en/people/2c4b9f091cd8378fd31c8b1f158e22d3/drzewiecka-jolanta</a>'+
+            '</div>';
 
+        
+         var infowindow2 = new google.maps.InfoWindow({
+          content: contentString2
+        });
+
+          var marke2r = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: 'Second!'
+        });
+
+         marker.addListener('click', function() {
+          infowindow.open(map, marker);
+        });
+        
+        
+        
       }   
        
     </script>
