@@ -22,18 +22,9 @@
     <div id="map"></div>
     <script>
       var map;
-      
       var myLatLng = {lat: 1.347682, lng: 103.683266};
       var myLatLng2 = {lat: 46.011452, lng: 8.958066};
       var myLatLng3 = {lat: 53.1068, lng: 8.852};
-      var myLatLng4 = {lat: 18.4655, lng: 66.1057};
-      var myLatLng5 = {lat: 1.3483, lng: 103.6831};
-      var myLatLng6 = {lat: 1.2966, lng: 103.7764;
-      var myLatLng7 = {lat: 42.915592, lng: 20.871583};
-      var myLatLng8 = {lat: 46.011452, lng: 8.958066};
-      var myLatLng9 = {lat: -33.891479, lng: 151.191687};
-      var myLatLng10 = {lat: 34.145715, lng: 108.875576};
-      
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 1.347682, lng: 103.683266},
@@ -98,7 +89,7 @@
             '<h1 id="firstHeading" class="firstHeading">Dr. Pauline Cheong , Faculty</h1>'+
             '<div id="bodyContent">'+
             '<p>Invited Speaker</p>' +
-            '<p>University of Bremen</p>'+
+            '<p>Unniversity of Bremen</p>'+
             '<p>Bremen, Germany'+
             '</div>';
 
@@ -116,185 +107,7 @@
          marker3.addListener('click', function() {
           infowindow3.open(map, marker3);
         });
-///////////////
-         var contentString4 = '<div id="content">'+
-            '<div id="description">'+
-            '</div>'+
-            '<h1 id="firstHeading" class="firstHeading">Dr. Pauline Cheong , Faculty</h1>'+
-            '<div id="bodyContent">'+
-            '<p>Invited Panelist: "Chinese non-governmental organizations, digital media and culture: Promise, practices & pathways for future research and collaboration". 2015</p>' +
-            '<p>International Communication Association</p>'+
-            '<p>San Juan, Puerto Rico'+
-            '<p>URL: <a href="https://convention2.allacademic.com/one/ica/ica15/">https://convention2.allacademic.com/one/ica/ica15/</a>'+
-            '</div>';
-
         
-         var infowindow4 = new google.maps.InfoWindow({
-          content: contentString4
-        });
-
-          var marker4 = new google.maps.Marker({
-          position: myLatLng4,
-          map: map,
-          title: 'Fourth!'
-        });
-
-         marker4.addListener('click', function() {
-          infowindow4.open(map, marker4);
-        });
-///////////////
-         var contentString5 = '<div id="content">'+
-            '<div id="description">'+
-            '</div>'+
-            '<h1 id="firstHeading" class="firstHeading">Dr. Pauline Cheong , Faculty</h1>'+
-            '<div id="bodyContent">'+
-            '<p>Invited Speaker, 2014</p>' +
-            '<p>Unniversity of Bremen</p>'+
-            '<p>Bremen, Germany'+
-            '<p>URL: <a href="https://convention2.allacademic.com/one/ica/ica15/">https://convention2.allacademic.com/one/ica/ica15/</a>'+
-            '</div>';
-
-        
-         var infowindow5 = new google.maps.InfoWindow({
-          content: contentString3
-        });
-
-          var marker5 = new google.maps.Marker({
-          position: myLatLng5,
-          map: map,
-          title: 'Fifth!'
-        });
-
-         marker5.addListener('click', function() {
-          infowindow5.open(map, marker5);
-        });
-///////////////
-         var contentString6 = '<div id="content">'+
-            '<div id="description">'+
-            '</div>'+
-            '<h1 id="firstHeading" class="firstHeading">Dr. Pauline Cheong , Faculty</h1>'+
-            '<div id="bodyContent">'+
-            '<p>Invited Speaker</p>' +
-            '<p>Unniversity of Bremen</p>'+
-            '<p>Bremen, Germany'+
-            '<p>URL: <a href="https://convention2.allacademic.com/one/ica/ica15/">https://convention2.allacademic.com/one/ica/ica15/</a>'+
-            '</div>';
-
-        
-         var infowindow6 = new google.maps.InfoWindow({
-          content: contentString6
-        });
-
-          var marker6 = new google.maps.Marker({
-          position: myLatLng6,
-          map: map,
-          title: 'Sixth!'
-        });
-
-         marker6.addListener('click', function() {
-          infowindow6.open(map, marker6);
-        });
-///////////////
-         var contentString7 = '<div id="content">'+
-            '<div id="description">'+
-            '</div>'+
-            '<h1 id="firstHeading" class="firstHeading">Dr. Pauline Cheong , Faculty</h1>'+
-            '<div id="bodyContent">'+
-            '<p>Invited Speaker</p>' +
-            '<p>Unniversity of Bremen</p>'+
-            '<p>Bremen, Germany'+
-            '</div>';
-
-        
-         var infowindow7 = new google.maps.InfoWindow({
-          content: contentString7
-        });
-
-          var marker7 = new google.maps.Marker({
-          position: myLatLng7,
-          map: map,
-          title: 'Seventh!'
-        });
-
-         marker7.addListener('click', function() {
-          infowindow7.open(map, marker7);
-        });
-///////////////
-         var contentString8 = '<div id="content">'+
-            '<div id="description">'+
-            '</div>'+
-            '<h1 id="firstHeading" class="firstHeading">Dr. Pauline Cheong , Faculty</h1>'+
-            '<div id="bodyContent">'+
-            '<p>Invited Speaker</p>' +
-            '<p>Unniversity of Bremen</p>'+
-            '<p>Bremen, Germany'+
-            '</div>';
-
-        
-         var infowindow8 = new google.maps.InfoWindow({
-          content: contentString8
-        });
-
-          var marker8 = new google.maps.Marker({
-          position: myLatLng8,
-          map: map,
-          title: 'Eight!'
-        });
-
-         marker8.addListener('click', function() {
-          infowindow8.open(map, marker8);
-        });
-///////////////
-         var contentString9 = '<div id="content">'+
-            '<div id="description">'+
-            '</div>'+
-            '<h1 id="firstHeading" class="firstHeading">Dr. Pauline Cheong , Faculty</h1>'+
-            '<div id="bodyContent">'+
-            '<p>Invited Speaker</p>' +
-            '<p>Unniversity of Bremen</p>'+
-            '<p>Bremen, Germany'+
-            '</div>';
-
-        
-         var infowindow9 = new google.maps.InfoWindow({
-          content: contentString9
-        });
-
-          var marker9 = new google.maps.Marker({
-          position: myLatLng9,
-          map: map,
-          title: 'Ninth!'
-        });
-
-         marker9.addListener('click', function() {
-          infowindow9.open(map, marker9);
-        });
-///////////////
-         var contentString10 = '<div id="content">'+
-            '<div id="description">'+
-            '</div>'+
-            '<h1 id="firstHeading" class="firstHeading">Dr. Pauline Cheong , Faculty</h1>'+
-            '<div id="bodyContent">'+
-            '<p>Invited Speaker</p>' +
-            '<p>Unniversity of Bremen</p>'+
-            '<p>Bremen, Germany'+
-            '</div>';
-
-        
-         var infowindow10 = new google.maps.InfoWindow({
-          content: contentString10
-        });
-
-          var marker10 = new google.maps.Marker({
-          position: myLatLng10,
-          map: map,
-          title: 'Tenth!'
-        });
-
-         marker10.addListener('click', function() {
-          infowindow10.open(map, marker10);
-        });
-///////////////
         
       }   
        
