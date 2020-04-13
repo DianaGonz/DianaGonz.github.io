@@ -106,6 +106,19 @@
                       status = "Alumni";
                   }
                   
+                
+                  if (arrayURL == "") {
+                  contentString= '<div id="content">'+
+                    '<div id="description">'+
+                    '</div>'+
+                    '<h1 id="firstHeading" class="firstHeading">'+arrayName+", "+status+'</h1>'+
+                    '<div id="bodyContent">'+
+                    '<p>'+arrayYear+'</p>' +
+                    '<p>'+arrayInstitution+'</p>'+
+                    '<p>'+arrayLocation+
+                    '</div>';
+                  }
+                  else {
                   contentString= '<div id="content">'+
                     '<div id="description">'+
                     '</div>'+
@@ -116,7 +129,7 @@
                     '<p>'+arrayLocation+
                     '<p>URL: <a href="'+arrayURL+'">'+arrayURL+'</a>'+
                     '</div>';
-                  
+                  }
                 
                   
                   var marker = new google.maps.Marker({
