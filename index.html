@@ -122,7 +122,20 @@
                     '<p>'+arrayText+'</p>'+
                     '<p>'+arrayYear+'</p>'+
                     '</div>';
-                  }
+                      
+                      if (status == "Alumni") {
+                  contentString= '<div id="content">'+
+                    '<div id="description">'+
+                    '</div>'+
+                    '<h1 id="firstHeading" class="firstHeading">'+arrayName+", "+status+'</h1>'+
+                    '<div id="bodyContent">'+
+                    '<p>'+arrayInstitution+'</p>' +
+                    '<p>'+arrayLocation+'</p>'+
+                    '<p>'+arrayText+'</p>'+
+                    '<p>'+arrayYear+'</p>'+
+                    '</div>';
+                    }//end nested if
+                  }//end if
                   else {
                   contentString= '<div id="content">'+
                     '<div id="description">'+
@@ -136,7 +149,21 @@
                     '<p>'+arrayYear+'</p>'+
                     '<p>URL: <a href="'+arrayURL+'">'+arrayURL+'</a>'+'</p>'+
                     '</div>';
-                  }
+                      
+                      if(status == "Alumni"){
+                      contentString= '<div id="content">'+
+                    '<div id="description">'+
+                    '</div>'+
+                    '<h1 id="firstHeading" class="firstHeading">'+arrayName+", "+status+'</h1>'+
+                    '<div id="bodyContent">'+
+                    '<p>'+arrayInstitution+'</p>' +
+                    '<p>'+arrayLocation+'</p>'+
+                    '<p>'+arrayText+'</p>'+
+                    '<p>'+arrayYear+'</p>'+
+                    '<p>URL: <a href="'+arrayURL+'">'+arrayURL+'</a>'+'</p>'+
+                    '</div>';
+                      }//end nested if
+                  }//end else
                   
                   var marker = new google.maps.Marker({
                   map: map,
