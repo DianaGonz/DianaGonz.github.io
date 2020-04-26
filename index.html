@@ -57,9 +57,6 @@
             var arrayResearcherType;
             var marker;
             var allMarkersArray = [];
-            var arrayWorkType; 
-            var arrayText;
-          
               
              // map.markers=[];
             var alumniArray = [];
@@ -88,8 +85,6 @@
                   arrayLocation = jsonObject[index]['Location'];
                   arrayYear = jsonObject[index]['Year'];
                   arrayInstitution = jsonObject[index]['Institution'];
-                  arrayWorkType = jsonObject[index]['WorkType'];
-                  arrayText = jsonObject[index]['Text'];
                   arrayURL = jsonObject[index]['URL'];
                   arrayResearcherType = jsonObject[index]['ResearcherType'];
                   contentString = arrayLocation;
@@ -101,7 +96,7 @@
                   
                   
                   if (arrayResearcherType == "1") {
-                      status = "Ph.D";
+                      status = "Faculty";
                       facultyArray.push(marker);
                   }
                   else {
@@ -116,54 +111,25 @@
                     '</div>'+
                     '<h1 id="firstHeading" class="firstHeading">'+arrayName+", "+status+'</h1>'+
                     '<div id="bodyContent">'+
-                    '<p>'+arrayInstitution+'</p>' +
-                    '<p>'+arrayLocation+'</p>'+
-                    '<p>'+arrayWorkType+'</p>'+
-                    '<p>'+arrayText+'</p>'+
-                    '<p>'+arrayYear+'</p>'+
+                    '<p>'+arrayYear+'</p>' +
+                    '<p>'+arrayInstitution+'</p>'+
+                    '<p>'+arrayLocation+
                     '</div>';
-                      
-                      if (status == "Alumni") {
-                  contentString= '<div id="content">'+
-                    '<div id="description">'+
-                    '</div>'+
-                    '<h1 id="firstHeading" class="firstHeading">'+arrayName+", "+status+'</h1>'+
-                    '<div id="bodyContent">'+
-                    '<p>'+arrayInstitution+'</p>' +
-                    '<p>'+arrayLocation+'</p>'+
-                    '<p>'+arrayText+'</p>'+
-                    '<p>'+arrayYear+'</p>'+
-                    '</div>';
-                    }//end nested if
-                  }//end if
+                  }
                   else {
                   contentString= '<div id="content">'+
                     '<div id="description">'+
                     '</div>'+
                     '<h1 id="firstHeading" class="firstHeading">'+arrayName+", "+status+'</h1>'+
                     '<div id="bodyContent">'+
-                    '<p>'+arrayInstitution+'</p>' +
-                    '<p>'+arrayLocation+'</p>'+
-                    '<p>'+arrayWorkType+'</p>'+
-                    '<p>'+arrayText+'</p>'+
-                    '<p>'+arrayYear+'</p>'+
-                    '<p>URL: <a href="'+arrayURL+'">'+arrayURL+'</a>'+'</p>'+
+                    '<p>'+arrayYear+'</p>' +
+                    '<p>'+arrayInstitution+'</p>'+
+                    '<p>'+arrayLocation+
+                    '<p>URL: <a href="'+arrayURL+'">'+arrayURL+'</a>'+
                     '</div>';
-                      
-                      if(status == "Alumni"){
-                      contentString= '<div id="content">'+
-                    '<div id="description">'+
-                    '</div>'+
-                    '<h1 id="firstHeading" class="firstHeading">'+arrayName+", "+status+'</h1>'+
-                    '<div id="bodyContent">'+
-                    '<p>'+arrayInstitution+'</p>' +
-                    '<p>'+arrayLocation+'</p>'+
-                    '<p>'+arrayText+'</p>'+
-                    '<p>'+arrayYear+'</p>'+
-                    '<p>URL: <a href="'+arrayURL+'">'+arrayURL+'</a>'+'</p>'+
-                    '</div>';
-                      }//end nested if
-                  }//end else
+                  }
+       
+                  //addDomListener(instance:document.getElementById('choices'), eventName:'filter', handler:filterMarkers);
                   
                   var marker = new google.maps.Marker({
                   map: map,
@@ -181,20 +147,19 @@
                   google.maps.event.addListener(marker, 'click', function() {    
                     // this = marker
                     var marker_map = this.getMap();
-               //->   //  this.info.open(marker_map, this);
+                    this.info.open(marker_map, this);
                     // this.info.open(marker_map, this);
                     // Note: If you call open() without passing a marker, the InfoWindow will use the position specified upon construction through the InfoWindowOptions object literal.
-                      
-//                       if (!marker.open){
+                  });
+                
+//                 if (!marker.open){
 //                         this.info.open(marker_map,this);
-//                           marker.open = true;
+//                         marker.open = true;
 //                       }
 //                       else{
 //                         this.info.close(marker_map,this);
-//                           marker.open = false;
+//                         marker.open = false;
 //                       }
-
-                  });
                 
                   allMarkersArray.push(marker);
                   
