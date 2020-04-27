@@ -53,8 +53,10 @@
             var arrayYear;
             var arrayInstitution;
             var arrayURL;
+            var arrayText;
             var contentString;
             var arrayResearcherType;
+            var arrayWorkType;
             var marker;
             var allMarkersArray = [];
               
@@ -83,9 +85,11 @@
                   arrayLong = jsonObject[index]['Longitudes'];
                   arrayName = jsonObject[index]['ResearcherName'];
                   arrayLocation = jsonObject[index]['Location'];
+                  arrayWorkType = jsonObject[index]['WorkType'];
                   arrayYear = jsonObject[index]['Year'];
                   arrayInstitution = jsonObject[index]['Institution'];
                   arrayURL = jsonObject[index]['URL'];
+                  arrayText = jsonObject[index]['Text'];
                   arrayResearcherType = jsonObject[index]['ResearcherType'];
                   contentString = arrayLocation;
                   var latLng = new google.maps.LatLng(arrayLat,arrayLong);
@@ -106,27 +110,58 @@
                   
                   
                   if (arrayURL == "") {
-                  contentString= '<div id="content">'+
-                    '<div id="description">'+
-                    '</div>'+
-                    '<h1 id="firstHeading" class="firstHeading">'+arrayName+", "+status+'</h1>'+
-                    '<div id="bodyContent">'+
-                    '<p>'+arrayYear+'</p>' +
-                    '<p>'+arrayInstitution+'</p>'+
-                    '<p>'+arrayLocation+
-                    '</div>';
+                        contentString= '<div id="content">'+
+                        '<div id="description">'+
+                        '</div>'+
+                        '<h1 id="firstHeading" class="firstHeading">'+arrayName+", "+status+'</h1>'+
+                        '<div id="bodyContent">'+
+                        '<p>'+arrayInstitution+'</p>' +
+                        '<p>'+arrayLocation+'</p>'+
+                        '<p>'+arrayWorkType+'</p>'+
+                        '<p>'+arrayText+'</p>'+
+                        '<p>'+arrayYear+'</p>'+
+                        '</div>';
+                      
+                      if(arrayResearcherType == "2"){
+                        contentString= '<div id="content">'+
+                        '<div id="description">'+
+                        '</div>'+
+                        '<h1 id="firstHeading" class="firstHeading">'+arrayName+", "+status+'</h1>'+
+                        '<div id="bodyContent">'+
+                        '<p>'+arrayInstitution+'</p>' +
+                        '<p>'+arrayLocation+'</p>'+
+                        '<p>'+arrayText+'</p>'+
+                        '<p>'+arrayYear+'</p>'+
+                        '</div>';
+                         }
                   }
                   else {
-                  contentString= '<div id="content">'+
-                    '<div id="description">'+
-                    '</div>'+
-                    '<h1 id="firstHeading" class="firstHeading">'+arrayName+", "+status+'</h1>'+
-                    '<div id="bodyContent">'+
-                    '<p>'+arrayYear+'</p>' +
-                    '<p>'+arrayInstitution+'</p>'+
-                    '<p>'+arrayLocation+
-                    '<p>URL: <a href="'+arrayURL+'">'+arrayURL+'</a>'+
-                    '</div>';
+                        contentString= '<div id="content">'+
+                        '<div id="description">'+
+                        '</div>'+
+                        '<h1 id="firstHeading" class="firstHeading">'+arrayName+", "+status+'</h1>'+
+                        '<div id="bodyContent">'+
+                        '<p>'+arrayInstitution+'</p>' +
+                        '<p>'+arrayLocation+'</p>'+
+                        '<p>'+arrayWorkType+'</p>'+
+                        '<p>'+arrayText+'</p>'+
+                        '<p>'+arrayYear+'</p>'+
+                        '<p>URL: <a href="'+arrayURL+'">'+arrayURL+'</a>'+'</p>'+
+                        '</div>';
+                      
+                      if(arrayResearcherType == "2"){
+                        contentString= '<div id="content">'+
+                        '<div id="description">'+
+                        '</div>'+
+                        '<h1 id="firstHeading" class="firstHeading">'+arrayName+", "+status+'</h1>'+
+                        '<div id="bodyContent">'+
+                        '<p>'+arrayInstitution+'</p>' +
+                        '<p>'+arrayLocation+'</p>'+
+                        '<p>'+arrayText+'</p>'+
+                        '<p>'+arrayYear+'</p>'+
+                        '<p>URL: <a href="'+arrayURL+'">'+arrayURL+'</a>'+'</p>'+
+                        '</div>';
+                         }
                   }
        
                   //addDomListener(instance:document.getElementById('choices'), eventName:'filter', handler:filterMarkers);
@@ -205,7 +240,7 @@
       <option value="Alumni">Alumni</option>
     </select></p>
       
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTI3Uov0uijAmOr1qh3l3Iqbi3QZyaM1Y&callback=initMap"
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8_QPA4O0YWXXZ4RwILEePsyRWdNBZcIA &callback=initMap"
     async defer></script>
       
 
