@@ -41,9 +41,9 @@
           
           
            //JSON Reading 
-         var xmlhttp = new XMLHttpRequest();
+            var xmlhttp = new XMLHttpRequest();
           
-                      //start demo area  
+             //start demo area  
             var index;
             var count = 0;
             var arrayLat;
@@ -70,17 +70,19 @@
         xmlhttp.onreadystatechange = function() {
             
           if (this.readyState == 4 && this.status == 200) {
-        //object retrieval    
+           //object retrieval    
             var jsonObject = JSON.parse(this.responseText);
             console.log(jsonObject);
             var specificObj = jsonObject[2]['Longitudes'];
-        //object turned into string  
+
+           //object turned into string  
             var objectString = JSON.stringify(jsonObject);
             var specificObj = JSON.stringify(specificObj);
             console.log("specificObj:"+specificObj);
               
 
               for (index in jsonObject) {
+
                   arrayLat = jsonObject[index]['Lattitudes'];
                   arrayLong = jsonObject[index]['Longitudes'];
                   arrayName = jsonObject[index]['ResearcherName'];
@@ -95,12 +97,12 @@
                   var latLng = new google.maps.LatLng(arrayLat,arrayLong);
                   
                   
-                  console.log(count+"length= "+jsonObject.length);
+                  //console.log(count+"length= "+jsonObject.length);
                   
                   
-                  
+                  //If arrayResearcherType is equal to one, set status equal to faculty, else status equals alumni
                   if (arrayResearcherType == "1") {
-                      status = "Ph.D";
+                      status = "Faculty";
                       facultyArray.push(marker);
                   }
                   else {
@@ -108,7 +110,7 @@
                       alumniArray.push(marker);
                   }
                   
-                  
+                  //If arrayURL is empty, content string does not diplay URL
                   if (arrayURL == "") {
                         contentString= '<div id="content">'+
                         '<div id="description">'+
@@ -122,6 +124,7 @@
                         '<p>'+arrayYear+'</p>'+
                         '</div>';
                       
+                      //if arrayURL is empty and researcher type is two (meaning alumni), does not display worktype as being alumni, for visual purposes. Also does not display a URL.
                       if(arrayResearcherType == "2"){
                         contentString= '<div id="content">'+
                         '<div id="description">'+
@@ -135,6 +138,7 @@
                         '</div>';
                          }
                   }
+                  //if arrayURL is not empty, displays URL
                   else {
                         contentString= '<div id="content">'+
                         '<div id="description">'+
@@ -180,21 +184,11 @@
                   });
                   
                   google.maps.event.addListener(marker, 'click', function() {    
-                    // this = marker
                     var marker_map = this.getMap();
                     this.info.open(marker_map, this);
-                    // this.info.open(marker_map, this);
                     // Note: If you call open() without passing a marker, the InfoWindow will use the position specified upon construction through the InfoWindowOptions object literal.
                   });
                 
-//                 if (!marker.open){
-//                         this.info.open(marker_map,this);
-//                         marker.open = true;
-//                       }
-//                       else{
-//                         this.info.close(marker_map,this);
-//                         marker.open = false;
-//                       }
                 
                   allMarkersArray.push(marker);
                   
@@ -212,34 +206,34 @@
   
      filterMarkers = function (category) {
             
-    for (i = 0; i < allMarkersArray.length; i++) {
-        marker = allMarkersArray[i];
-        // If is same category or category not picked
-        if (marker.category == category || category.length === 0) {
-            marker.setVisible(true);
-        }
-        // Categories don't match 
-        else {
-            marker.setVisible(false);
-        }
-    }
+        for (i = 0; i < allMarkersArray.length; i++) {
+          marker = allMarkersArray[i];
+          // If is same category or category not picked
+          if (marker.category == category || category.length === 0) {
+              marker.setVisible(true);
+          }
+          // Categories don't match 
+          else {
+              marker.setVisible(false);
+          }
+        }//end for loop
             
-}
+      } //end filterMarkers 
           
       }   //func init end
-    
-                  
-   
-             
+     
         
-        
+
     </script>
-<br><p>    <select id="hello" onchange="filterMarkers(this.value);">
-    <option value="">Please select a researcher type</option>
-    <option value="Faculty">Faculty</option>
+<br><p>    
+    <select id="hello" onchange="filterMarkers(this.value);">
+      <option value="">Please select a researcher type</option>
+      <option value="Faculty">Faculty</option>
       <option value="Alumni">Alumni</option>
-    </select></p>
+    </select>
+  </p>
       
+    <!--Insert the API Key here between the "=" and "&"-->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTI3Uov0uijAmOr1qh3l3Iqbi3QZyaM1Y&callback=initMap"
     async defer></script>
       
